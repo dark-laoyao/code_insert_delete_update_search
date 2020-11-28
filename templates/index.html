@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">主页</h1>
+<form action="" method="post">
+    <table align="center" border="1">
+        {% for u in uu %}
+            <tr>
+                <td>{{ u.name }}</td>
+                <td>{{ u.password }}</td>
+                <td><a href="{{ url_for('insert') }}">新增</a></td>
+                <td><a href="{{ url_for('delete', id =u.id) }}">删除</a></td>
+                <td><a href="{{ url_for('update', u_id =u.id) }}">更新</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</form>
+</body>
+</html>
